@@ -9,10 +9,10 @@ public class Application {
     public static void main(String[] args) {
 //        SpringApplication.run(Application.class, args);
         SpringApplication app =  new SpringApplication(Application.class);
-        app.setWebApplicationType(WebApplicationType.NONE);
+        app.setWebApplicationType(WebApplicationType.SERVLET);
         app.addListeners(new SimpleListner());
         app.run(args);
 
-        // todo : 프로파일 할 차례
+        // todo : 스프링 웹 mvc 2부 할 차례
     }
 }
