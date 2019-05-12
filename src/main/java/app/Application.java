@@ -13,6 +13,6 @@ public class Application {
         app.addListeners(new SimpleListner());
         app.run(args);
 
-        // todo : 스프링 웹 mvc 2부 할 차례
+        // todo : 스프링 웹 MVC 10부: Spring HATEOAS 할차례
     }
 }
