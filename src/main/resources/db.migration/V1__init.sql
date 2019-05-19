@@ -1,0 +1,1 @@
+create table account(id bigint not null);

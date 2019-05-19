@@ -13,6 +13,6 @@ public class Application {
         app.addListeners(new SimpleListner());
         app.run(args);
 
-        // todo : 스프링 데이터 3부: MySQL 할차례
+        // todo : 스프링 데이터 3부: Redis 할차례
     }
 }
