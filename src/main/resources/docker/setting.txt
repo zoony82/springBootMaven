@@ -1,0 +1,68 @@
+https://hiseon.me/2018/02/19/install-docker/
+
+https://javaexpert.tistory.com/944
+
+insam@dev:~$ sudo docker pull mongo
+Using default tag: latest
+latest: Pulling from library/mongo
+9ff7e2e5f967: Pull complete
+59856638ac9f: Pull complete
+6f317d6d954b: Pull complete
+a9dde5e2a643: Pull complete
+815c6aedc001: Pull complete
+8566b2594855: Pull complete
+01c9fe451980: Pull complete
+5c9e7bc12cea: Pull complete
+c64dd2c4159a: Pull complete
+6c9522757e83: Pull complete
+7cedccbc13a9: Pull complete
+29aec2f2353d: Pull complete
+08bcfe00e506: Pull complete
+Digest: sha256:515b7b4b3762c8f2b1b50b701c086de76356f45c2a2847a74990bf5915251704
+Status: Downloaded newer image for mongo:latest
+
+insam@dev:~$ sudo docker run --name database -d -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0
+1d84e335c5c78cd5b7455a9a626ae147e84f7738c38ac89bf04c1ed061ba37b9
+
+insam@dev:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                      NAMES
+1d84e335c5c7        mongo               "docker-entrypoint.s…"   33 seconds ago      Up 32 seconds       0.0.0.0:27017->27017/tcp   database
+
+
+
+
+컨테이너 조회
+sudo docker ps
+정지된 컨테이너 까지 확인
+sudo docker ps -a
+컨테이너 삭제
+sudo docker rm
+모든 컨테이너 삭제
+sudo docker rm 'docker ps -a -q'
+
+이미지 조회
+sudo docker image ls
+이미지 확인
+sudo docker images
+이미지 삭제
+sudo docker rmi []
+
+컨테이너 시작
+sudo docker start 1d84e335c5c7
+컨테이너 접속
+sudo docker attach 1d84e335c5c7
+컨테이너 중지
+sudo docker stop 36151fe20e6d
+컨테이너 재시작
+sudo docker restart 36151fe20e6d
+
+외부에서 컨테이너 실행(쉘 환경 접속)
+sudo docker exec -i -t database bash
+몽고db 실행
+mongo
+
+> db
+test
+> use test
+switched to db test
+> db.accounts.find({})
